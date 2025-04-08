@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enums
-{
-
-}
 public enum CharacterName
 {
     Rasputin,
@@ -13,9 +9,13 @@ public enum CharacterName
 }
 public enum CharacterPosition
 {
-
-}public enum CharacterMood
-{
-
+    Center, 
+    Left, 
+    Right
 }
-
+public enum CharacterMood
+{
+    Bag, 
+    Phone, 
+    Flex
+}

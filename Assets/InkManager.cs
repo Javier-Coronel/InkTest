@@ -17,6 +17,10 @@ public class InkManager : MonoBehaviour
     private GameObject _choiceButtonsContainer;
     [SerializeField]
     private Button _choiceButtonPrefab;
+    [SerializeField]
+    private Color _normalTextColor;
+    [SerializeField]
+    private Color _pensamientoTextColor;
     private CharacterManager _characterManager;
     // Start is called before the first frame update
     void Start()
@@ -25,11 +29,6 @@ public class InkManager : MonoBehaviour
         StartStory();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     /// <summary>
     /// Inicializa la historia
     /// </summary>

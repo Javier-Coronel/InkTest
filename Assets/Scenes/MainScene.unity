@@ -156,6 +156,8 @@ MonoBehaviour:
   _verticalLayoutGroup: {fileID: 786333925}
   _choiceButtonsContainer: {fileID: 786333923}
   _choiceButtonPrefab: {fileID: 2896540630489735823, guid: 0ed630566756de44aa6f00e0353d811e, type: 3}
+  _normalTextColor: {r: 0, g: 0, b: 0, a: 0}
+  _pensamientoTextColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &304517246
 Transform:
   m_ObjectHideFlags: 0
@@ -469,6 +471,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1010485428}
   - component: {fileID: 1010485429}
+  - component: {fileID: 1010485431}
+  - component: {fileID: 1010485430}
   m_Layer: 5
   m_Name: CharacterManager
   m_TagString: Untagged
@@ -507,6 +511,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5995920776efc7249af98922b7f3f8f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterPrefab: {fileID: 6761690410507476485, guid: 6d2b87cfdcdea3b48a34caec9fce57ec, type: 3}
+  _rasputinMoods: {fileID: 1010485431}
+  _pipoMoods: {fileID: 1010485430}
+--- !u!114 &1010485430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010485427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78293ae77b71f7c48a96794f1c31fa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 1
+  Bag: {fileID: 785381844, guid: 514e89859b5a7fb4094f0f7191df2dca, type: 3}
+  Phone: {fileID: 534945712, guid: 514e89859b5a7fb4094f0f7191df2dca, type: 3}
+  Flex: {fileID: -487933655, guid: 514e89859b5a7fb4094f0f7191df2dca, type: 3}
+--- !u!114 &1010485431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010485427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78293ae77b71f7c48a96794f1c31fa8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 0
+  Bag: {fileID: -1976542203, guid: 514e89859b5a7fb4094f0f7191df2dca, type: 3}
+  Phone: {fileID: 121344886, guid: 514e89859b5a7fb4094f0f7191df2dca, type: 3}
+  Flex: {fileID: 446131233, guid: 514e89859b5a7fb4094f0f7191df2dca, type: 3}
 --- !u!1 &1127150426
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,10 +1007,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1010485428}
   - {fileID: 1608349449}
   - {fileID: 1705847524}
   - {fileID: 786333924}
-  - {fileID: 1010485428}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

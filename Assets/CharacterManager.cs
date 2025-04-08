@@ -7,15 +7,18 @@ using System.Linq;
 
 public class CharacterManager : MonoBehaviour
 {
-    private List<Character> _Character;
+    private List<Character> _Characters;
+    [SerializeField]
     private GameObject _characterPrefab;
+    [SerializeField]
     private CharacterMoods _rasputinMoods;
+    [SerializeField]
     private CharacterMoods _pipoMoods;
 
     // Start is called before the first frame update
     void Start()
     {
-        _Character = new List<Character>();
+        _Characters = new List<Character>();
     }
     public void CreateCharacter(string name, string position, string mood)
     {
@@ -34,18 +37,18 @@ public class CharacterManager : MonoBehaviour
     }
     public void CreateCharacter(CharacterName name, CharacterPosition position, CharacterMood mood)
     {
-        var character = _Character.FirstOrDefault(c => c.Name == name);
+        var character = _Characters.FirstOrDefault(c => c.Name == name);
         if (character == null)
         {
             var CharacterObject = Instantiate(_characterPrefab, gameObject.transform,false);
             character = CharacterObject.GetComponent<Character>();
-            _Character.Add(character);
+            _Characters.Add(character);
 
         }else if (character.IsShowing)
         {
             return;
         }
-        character.Init(name, position, mood);
+        character.Init(name, position, mood, GetMoodSetForCharacter(name));
 
     }
     public void HideCharacter(string name)
@@ -57,7 +60,7 @@ public class CharacterManager : MonoBehaviour
     }
     public void HideCharacter(CharacterName name)
     {
-        var character = _Character.FirstOrDefault(_c => _c.Name == name);
+        var character = _Characters.FirstOrDefault(_c => _c.Name == name);
         if (character?.IsShowing != true)
         {
             Debug.Log("No esta mostrado");
@@ -83,7 +86,7 @@ public class CharacterManager : MonoBehaviour
     }
     public void ChangeMood(CharacterName name, CharacterMood mood)
     {
-        var character = _Character.FirstOrDefault(_c => _c.Name == name);
+        var character = _Characters.FirstOrDefault(_c => _c.Name == name);
         if(character?.IsShowing != true)
         {
             return;
@@ -98,12 +101,11 @@ public class CharacterManager : MonoBehaviour
         switch (name)
         {
             case CharacterName.Rasputin:
-                return _rasputinMoods;
+            return _rasputinMoods;
             case CharacterName.Pipo:
-                return _pipoMoods;
+            return _pipoMoods;
             default:
-
-                return null;
+            return null;
         }
     }
 }

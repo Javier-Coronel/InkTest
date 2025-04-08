@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class CharacterMoods : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public CharacterName Name;
+    public Sprite Bag;
+    public Sprite Phone;
+    public Sprite Flex;
+    public Sprite GetMoodSprite(CharacterMood mood)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        switch (mood)
+        {
+            case CharacterMood.Bag:
+            return Bag;
+            case CharacterMood.Phone:
+            return Phone ?? Bag;
+            case CharacterMood.Flex:
+            return Flex ?? Bag;
+            default:
+                Debug.Log($"No se encontró el Sprite para el personaje: {Name}, mood : {mood}");
+            return Bag;
+        }
     }
 }
